@@ -68,7 +68,7 @@ const PhysicalExercisePage = () => {
   const { pickPhysicalActivities, physicalActivities } = useContext(AppContext);
   return (
     <div>
-      <StyledTitle>Physical exercise</StyledTitle>
+      <StyledTitle>Physical exercises</StyledTitle>
       <StyledText>
         Physical exercise means a lot for a woman who <br /> wants to lose kilos
         and works at the office

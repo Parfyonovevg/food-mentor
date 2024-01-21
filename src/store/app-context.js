@@ -14,3 +14,5 @@ export const AppContext = createContext({
   pickDestructiveBehaviors: () => {},
   pickPhysicalActivities: () => {},
 });
+
+

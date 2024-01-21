@@ -19,11 +19,11 @@ const StyledTabs = styled.div`
   height: 32px;
   border: 1px solid #5fcb39;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
   overflow: hidden;
   color: #5fcb39;
 `;
-const StyledTab = styled.div`
+export const StyledTab = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,16 +57,17 @@ const MeasurePage = () => {
     pickMeasures({ ...measures, height: e.target.value });
   };
   const setWeightHandler = (e) => {
-    console.log(e.target.value);
     pickMeasures({ ...measures, weight: e.target.value });
   };
-  console.log(measures);
   return (
     <div>
       <StyledTitle>Measure Yourself</StyledTitle>
       <StyledText>What are your height and body weight</StyledText>
       <StyledTabs>
-        <StyledTab active={metric === 'imp'} onClick={() => setMetric('imp')}>
+        <StyledTab
+          data-testid='measure-tab'
+          active={metric === 'imp'}
+          onClick={() => setMetric('imp')}>
           IMPERIAL
         </StyledTab>
         <StyledTab active={metric === 'metr'} onClick={() => setMetric('metr')}>

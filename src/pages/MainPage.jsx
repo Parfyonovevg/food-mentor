@@ -1,6 +1,6 @@
 const MainPage = () => {
   return (
-    <div className='navigation'>
+    <div>
       <h2>Home Page</h2>
     </div>
   );

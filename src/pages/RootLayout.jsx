@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styled from 'styled-components';
 
 import { Outlet, useNavigate } from 'react-router-dom';
@@ -18,7 +18,11 @@ const StyledContainer = styled.div`
 
 const RootLayout = () => {
   const [activePath, setActivePath] = useState(PATHS[0]);
+  console.log(activePath);
   const navigate = useNavigate();
+  useEffect(() => {
+    navigate(PATHS[0]);
+  }, []);
   const nextPageHandler = () => {
     const index = PATHS.indexOf(activePath);
     if (index < PATHS.length - 1) {
@@ -31,7 +35,7 @@ const RootLayout = () => {
   };
   return (
     <StyledContainer>
-      <Header />
+      <Header moveHome={() => setActivePath(PATHS[0])} />
       <Outlet />
       <Button text='Continue' onClick={nextPageHandler}></Button>
       <Info />

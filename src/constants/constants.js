@@ -31,7 +31,7 @@ export const GOALS = [
     img: developHealthyHabitsPic,
   },
   {
-    title: 'Develop Healthy Habits',
+    title: 'Develop Healthy Habits2',
     img: developHealthyHabitsPic2,
   },
 ];
