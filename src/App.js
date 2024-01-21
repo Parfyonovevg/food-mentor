@@ -1,45 +1,57 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
-import MainPage from './pages/MainPage';
-import GoalPage from './pages/GoalPage';
-import MeasurePage from './pages/MeasurePage';
-import DestructiveBehaviorsPage from './pages/DestructiveBehaviorsPage';
-import PhysicalExercisePage from './pages/PhysicalExercisePage';
-import RootLayout from './pages/RootLayout';
+import { RouterProvider } from 'react-router-dom';
+import { useState } from 'react';
+import router from './routes';
 import { AppContext } from './store/app-context';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <RootLayout />,
-    children: [
-      {
-        path: '/',
-        element: <MainPage />,
-      },
-      {
-        path: '/goal',
-        element: <GoalPage />,
-      },
-      {
-        path: '/measure',
-        element: <MeasurePage />,
-      },
-      {
-        path: '/destructive-behavior',
-        element: <DestructiveBehaviorsPage />,
-      },
-      {
-        path: '/physical-exercise',
-        element: <PhysicalExercisePage />,
-      },
-    ],
-  },
-]);
-
 function App() {
+  const [goal, setGoal] = useState('');
+  const [measures, setMeasures] = useState({
+    system: '',
+    height: '',
+    weight: '',
+  });
+  const [destructiveBehaviors, setDestructiveBehaviors] = useState([]);
+  const [physicalActivities, setPhysicalActivities] = useState('');
+
+  const pickGoal = (goal) => {
+    setGoal(goal);
+  };
+
+  const pickMeasures = (measures) => {
+    setMeasures(measures);
+  };
+
+  const pickDestructiveBehaviors = (destructiveBehavior) => {
+    if (destructiveBehavior === 'None of the above') {
+      setDestructiveBehaviors(['None of the above']);
+    } else if (destructiveBehaviors.includes('None of the above')) {
+      setDestructiveBehaviors([destructiveBehavior]);
+    } else if (destructiveBehaviors.includes(destructiveBehavior)) {
+      setDestructiveBehaviors(
+        destructiveBehaviors.filter((item) => item !== destructiveBehavior)
+      );
+    } else {
+      setDestructiveBehaviors([...destructiveBehaviors, destructiveBehavior]);
+    }
+  };
+
+  const pickPhysicalActivities = (physicalActivities) => {
+    setPhysicalActivities(physicalActivities);
+  };
+
+  const contextValues = {
+    goal,
+    measures,
+    destructiveBehaviors,
+    physicalActivities,
+    pickGoal,
+    pickMeasures,
+    pickDestructiveBehaviors,
+    pickPhysicalActivities,
+  };
+
   return (
-    <AppContext.Provider>
+    <AppContext.Provider value={contextValues}>
       <RouterProvider router={router} />
     </AppContext.Provider>
   );

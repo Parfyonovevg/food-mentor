@@ -1,3 +1,14 @@
+import loseWeightPic from '../assets/images/goals/image1.png';
+import gainMusclePic from '../assets/images/goals/image2.png';
+import developHealthyHabitsPic from '../assets/images/goals/image3.png';
+import developHealthyHabitsPic2 from '../assets/images/goals/image4.png';
+import moonIcon from '../assets/images/icons/moon.png';
+import donutIcon from '../assets/images/icons/donut.png';
+import sodaIcon from '../assets/images/icons/soda.png';
+import saltIcon from '../assets/images/icons/salt.png';
+import pizzaIcon from '../assets/images/icons/pizza.png';
+import crossIcon from '../assets/images/icons/cross.png';
+
 export const PATHS = [
   '/',
   '/goal',
@@ -8,20 +19,20 @@ export const PATHS = [
 
 export const GOALS = [
   {
-    title: 'Loose weight',
-    img: '',
+    title: 'Loose Weight',
+    img: loseWeightPic,
   },
   {
     title: 'Gain Muscle',
-    img: '',
+    img: gainMusclePic,
   },
   {
     title: 'Develop Healthy Habits',
-    img: '',
+    img: developHealthyHabitsPic,
   },
   {
     title: 'Develop Healthy Habits',
-    img: '',
+    img: developHealthyHabitsPic2,
   },
 ];
 
@@ -29,27 +40,27 @@ export const MEASURES = ['Metric', 'Imperial'];
 export const DESTRUCTIVE_BEHAVIORS = [
   {
     title: `I don't rest enough`,
-    img: '',
+    img: moonIcon,
   },
   {
     title: `I have a sweet tooth`,
-    img: '',
+    img: donutIcon,
   },
   {
     title: `I have to much soda`,
-    img: '',
+    img: sodaIcon,
   },
   {
     title: `I eat many salty food`,
-    img: '',
+    img: saltIcon,
   },
   {
     title: `I enjoy midnight snacks`,
-    img: '',
+    img: pizzaIcon,
   },
   {
     title: `None of the above`,
-    img: '',
+    img: crossIcon,
   },
 ];
 
