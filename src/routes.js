@@ -14,7 +14,6 @@ const router = createBrowserRouter([
       {
         path: '/food-mentor',
         element: <MainPage />,
-        index: true,
       },
       {
         path: '/goal',
