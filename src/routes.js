@@ -8,11 +8,11 @@ import RootLayout from './pages/RootLayout';
 
 const router = createBrowserRouter([
   {
-    path: '/food-mentor',
+    path: '/',
     element: <RootLayout />,
     children: [
       {
-        path: '/food-mentor',
+        path: '/',
         element: <MainPage />,
       },
       {

@@ -10,7 +10,7 @@ import pizzaIcon from '../assets/images/icons/pizza.png';
 import crossIcon from '../assets/images/icons/cross.png';
 
 export const PATHS = [
-  '/food-mentor',
+  '/',
   '/goal',
   '/measure',
   '/destructive-behavior',
